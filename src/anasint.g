@@ -1,0 +1,6 @@
+///////////////////////////////
+// Analizador sintáctico
+///////////////////////////////
+class Anasint extends Parser;
+
+entrada : EOF;
