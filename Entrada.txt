@@ -1,0 +1,50 @@
+# Tipos de archivos a clasificar, con sus atributos
+ESQUEMAS
+	VIDEOS
+		num Anyo
+		txt Genero
+		[num Puntuacion]
+	
+	MUSICA
+		txt Autor
+		txt Album
+		txt Genero
+		[tim Duracion]
+		[num Puntuacion]
+
+	LIBROS
+		txt Autor
+		num Anyo	#Año de publicación
+		txt Genero
+		[num Puntuacion]
+		
+
+# Rutas a los archivos para clasificar
+DATOS
+	/home/usuario/Multimedia/Películas/La vida es bella: 1997, tragicomedia.avi
+	/home/usuario/Multimedia/Música/El idioma de los dioses: Nach, 2011, RAP, 1:14, 5.mp3
+	/home/usuario/Multimedia/Libros/1984: George Orwell, 1949, política.pdf
+
+# Salida esperada
+#SALIDA
+#	VIDEOS:
+#		La vida es bella
+#			Formato: avi
+#			Año: 1997
+#			Puntuación: ?
+#	MÚSICA:
+#		El idioma de los dioses
+#			Formato: mp3
+#			Autor: Nach
+#			Año: 2011
+#			Género: RAP
+#			Duración: 1 minuto, 14 segundos
+#			Puntuación: 5
+#	LIBROS
+#		1984
+#			Formato: pdf
+#			Autor: George Orwell
+#			Año: 1949
+#			Género: Política
+#			Puntuación: ?
+
