@@ -1,0 +1,19 @@
+##Analex files
+Analex.java
+AnalexTokenTypes.java
+Anasint.java
+AnasintTokenTypes.java
+Analex.smap
+AnalexTokenTypes.txt
+Anasint.smap
+AnasintTokenTypes.txt
+
+##Eclipse files
+.antlr-eclipse
+.classpath
+.project
+.settings/
+bin
+
+##Vim files
+.*.swp
