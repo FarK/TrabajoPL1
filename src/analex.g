@@ -3,8 +3,8 @@
 /********************/
 class Analex extends Lexer;
 options{
-	//importVocab = Anasint;
-	k=2;
+	importVocab = Anasint;
+	k=1;
 	charVocabulary = '\3'..'\377';
 }
 
@@ -21,8 +21,8 @@ tokens {
 // Blancos
 //TODO: Diferenciar entre los espacioes en blanco de las rutas y del resto de
 //la entrada
-NUEVA_LINEA : '\n' {newline();};
-TABULADOR : '\t';
+SL : '\n' {newline();};
+TAB: '\t';
 BLANCO : ' ' {$setType(Token.SKIP);};
 
 // Comentarios
