@@ -3,7 +3,7 @@
 /********************/
 class Analex extends Lexer;
 options{
-	importVocab = Anasint;
+	//importVocab = Anasint;
 	k=1;
 	charVocabulary = '\3'..'\377';
 }
@@ -14,7 +14,7 @@ tokens {
 	T_TEXTO="txt";
 	T_TIEMPO="tim";
 	
-	ESQUEMA="ESQUEMAS";
+	ESQUEMAS="ESQUEMAS";
 	DATOS="DATOS";
 }
 
