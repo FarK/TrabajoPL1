@@ -1,4 +1,5 @@
 import java.io.*;
+
 import antlr.*;
 
 public class Procesador {
@@ -7,8 +8,15 @@ public class Procesador {
 			FileInputStream fis = new FileInputStream(args[0]);
 			
 			Analex analex = new Analex(fis);
+
+			for(Token token = analex.nextToken();
+					token.getType() != Token.EOF_TYPE;
+					token = analex.nextToken())
+			{
+			       System.out.println(token);
+			}
+
 			Anasint anasint = new Anasint(analex);
-			
 			anasint.entrada();
 			
 		}catch(ANTLRException ae) {
