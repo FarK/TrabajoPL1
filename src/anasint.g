@@ -1,6 +1,6 @@
-///////////////////////////////
-// Analizador sintáctico
-///////////////////////////////
+/************************/
+/* Analizador sintáctico /
+/************************/
 class Anasint extends Parser;
 options{
 	importVocab = Analex;
@@ -8,10 +8,10 @@ options{
 
 entrada: esquemas datos;
 
-esquemas: ESQUEMA (SL)+ (TAB esquema)*;
-datos: DATOS (SL)+ (TAB RUTA (SL)+)*;
+esquemas: ESQUEMAS LLAVE_A (esquema)* LLAVE_C;
+datos: DATOS LLAVE_A (RUTA)* LLAVE_C;
 
-esquema: IDENT (SL)+ (TAB TAB atributo)+;
+esquema: IDENT LLAVE_A (atributo)+ LLAVE_C;
 atributo: (CORCHETE_A)? tipo IDENT (CORCHETE_C)?;
 tipo: T_NUMERO
     | T_TEXTO
