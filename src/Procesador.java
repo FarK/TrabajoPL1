@@ -12,6 +12,8 @@ public class Procesador {
 			Anasint anasint = new Anasint(analex);
 			anasint.entrada();
 			AST arbol = anasint.getAST();
+			Evaluador evaluador = new Evaluador();
+			evaluador.entrada(arbol);
 
 			ASTFrame display = new ASTFrame("Árbol", arbol);
 			display.setVisible(true);
