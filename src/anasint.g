@@ -4,15 +4,25 @@
 class Anasint extends Parser;
 options{
 	importVocab = Analex;
+	buildAST = true;
 }
 
-entrada: esquemas datos;
+tokens{
+	ENTRADA;
+	ATRIBUTO;
+}
 
-esquemas: ESQUEMAS LLAVE_A (esquema)* LLAVE_C;
-datos: DATOS LLAVE_A (RUTA)* LLAVE_C;
+entrada: esquemas datos
+         {#entrada = #(#[ENTRADA,"ENTRADA"], ##);}
+       ;
 
-esquema: IDENT LLAVE_A (atributo)+ LLAVE_C;
-atributo: (CORCHETE_A)? tipo IDENT (CORCHETE_C)?;
+esquemas: ESQUEMAS^ LLAVE_A! (esquema)* LLAVE_C!;
+datos: DATOS^ LLAVE_A! (RUTA)* LLAVE_C!;
+
+esquema: IDENT^ LLAVE_A! (atributo)+ LLAVE_C!;
+atributo: (CORCHETE_A!)? tipo IDENT (CORCHETE_C!)?
+          {#atributo = #(##, ##);}
+        ;
 tipo: T_NUMERO
     | T_TEXTO
     | T_TIEMPO;
