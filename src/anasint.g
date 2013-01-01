@@ -1,27 +1,26 @@
-///////////////////////////////
-// Analizador sintáctico
-///////////////////////////////
+/************************/
+/* Analizador sintáctico /
+/************************/
 class Anasint extends Parser;
 options{
 	importVocab = Analex;
-	k=3;
+	buildAST = true;
 }
 
-saltos: (SL)+;
-leb: (TAB)*SL;
+tokens{
+	ENTRADA;
+	ATRIBUTO;
+}
 
-entrada: (leb)* esquemas datos EOF;
+entrada: esquemas datos
+         {#entrada = #(#[ENTRADA,"ENTRADA"], ##);}
+       ;
 
-esquemas: ESQUEMAS (leb)+ (TAB esquema)+;
-datos: DATOS SL (TAB RUTA(SL TAB RUTA)*)?;
+esquemas: ESQUEMAS^ LLAVE_A! (esquema)* LLAVE_C!;
+datos: DATOS^ LLAVE_A! (RUTA)* LLAVE_C!;
 
-esquema: IDENT SL atributos;
-atributos: TAB TAB atributo(SL TAB TAB atributo)*;
-atributo: (CORCHETE_A)? tipo IDENT (CORCHETE_C)?
-        | leb
-        ;
-
-tipo: t:T_NUMERO {System.out.println(t.getText());}
-    | t2:T_TEXTO {System.out.println(t2.getText());}
-    | t3:T_TIEMPO {System.out.println(t3.getText());}
-    ;
+esquema: IDENT^ LLAVE_A! (atributo)+ LLAVE_C!;
+atributo: (CORCHETE_A!)? tipo IDENT^ (CORCHETE_C!)?;
+tipo: T_NUMERO
+    | T_TEXTO
+    | T_TIEMPO;

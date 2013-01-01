@@ -1,29 +1,34 @@
 # Tipos de archivos a clasificar, con sus atributos
-ESQUEMAS
-	VIDEOS
+ESQUEMAS{
+	VIDEOS{
 		num Anyo
 		txt Genero
 		[num Puntuacion]
+	}
 	
-	MUSICA
+	MUSICA{
 		txt Autor
 		txt Album
 		txt Genero
 		[tim Duracion]
 		[num Puntuacion]
+	}
 
-	LIBROS
+	LIBROS{
 		txt Autor
 		num Anyo	#Año de publicación
 		txt Genero
 		[num Puntuacion]
+	}
+}
 		
 
 # Rutas a los archivos para clasificar
-DATOS
+DATOS{
 	/home/usuario/Multimedia/Películas/La vida es bella: 1997, tragicomedia.avi
 	/home/usuario/Multimedia/Música/El idioma de los dioses: Nach, 2011, RAP, 1:14, 5.mp3
 	/home/usuario/Multimedia/Libros/1984: George Orwell, 1949, política.pdf
+}
 
 # Salida esperada
 #SALIDA

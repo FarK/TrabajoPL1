@@ -1,12 +1,18 @@
 ##Analex files
-Analex.java
-AnalexTokenTypes.java
-Anasint.java
-AnasintTokenTypes.java
 Analex.smap
+Analex.java
 AnalexTokenTypes.txt
+AnalexTokenTypes.java
+
 Anasint.smap
+Anasint.java
 AnasintTokenTypes.txt
+AnasintTokenTypes.java
+
+Evaluador.smap
+Evaluador.java
+EvaluadorTokenTypes.txt
+EvaluadorTokenTypes.java
 
 ##Eclipse files
 .antlr-eclipse

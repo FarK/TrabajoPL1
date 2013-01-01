@@ -3,7 +3,6 @@
 /********************/
 class Analex extends Lexer;
 options{
-	//importVocab = Anasint;
 	k=1;
 	charVocabulary = '\3'..'\377';
 }
@@ -21,9 +20,9 @@ tokens {
 // Blancos
 //TODO: Diferenciar entre los espacioes en blanco de las rutas y del resto de
 //la entrada
-SL : '\n' {newline();};
-TAB: '\t';
-BLANCO : ' ' {$setType(Token.SKIP);};
+protected SL : '\n' {newline();};
+protected TAB: '\t';
+BLANCO : (SL|TAB|' ') {$setType(Token.SKIP);};
 
 // Comentarios
 COMENTARIO: "#" (~'\n')* {$setType(Token.SKIP);};
@@ -41,5 +40,7 @@ protected LETRA : 'A'..'Z'|'a'..'z';
 IDENT: LETRA(LETRA|DIGITO)*;
 
 //Agrupadores
+LLAVE_A: '{';
+LLAVE_C: '}';
 CORCHETE_A: '[';
 CORCHETE_C: ']';
