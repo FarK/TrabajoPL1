@@ -1,0 +1,6 @@
+# Rutas a los archivos para clasificar
+DATOS{
+	/home/usuario/Multimedia/Peliculas/La vida es bella| 1997, tragicomedia.avi
+	/home/usuario/Multimedia/Musica/El idioma de los dioses| Nach, 2011, RAP, 1:14, 5.mp3
+	/home/usuario/Multimedia/Libros/1984| George Orwell, 1949, politica.pdf
+}

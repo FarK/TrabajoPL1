@@ -1,0 +1,23 @@
+# Tipos de archivos a clasificar, con sus atributos
+ESQUEMAS{
+	VIDEOS{
+		num Anyo
+		txt Genero
+		[num Puntuacion]
+	}
+	
+	MUSICA{
+		txt Autor
+		txt Album
+		txt Genero
+		[tim Duracion]
+		[num Puntuacion]
+	}
+
+	LIBROS{
+		txt Autor
+		num Anyo	#Año de publicación
+		txt Genero
+		[num Puntuacion]
+	}
+}
