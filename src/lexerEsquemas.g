@@ -1,7 +1,7 @@
 /********************/
 /* Analizador léxico /
 /********************/
-class Analex extends Lexer;
+class LexerEsquemas extends Lexer;
 options{
 	k=1;
 	charVocabulary = '\3'..'\377';

@@ -1,9 +1,9 @@
 /************************/
 /* Analizador sintáctico /
 /************************/
-class Anasint extends Parser;
+class ParserEsquemas extends Parser;
 options{
-	importVocab = Analex;
+	importVocab = LexerEsquemas;
 	buildAST = true;
 }
 

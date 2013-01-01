@@ -1,18 +1,21 @@
-##Analex files
-Analex.smap
-Analex.java
-AnalexTokenTypes.txt
-AnalexTokenTypes.java
+##ANTLR files
+#lerxerEsquemas.g
+LexerEsquemas.smap
+LexerEsquemas.java
+LexerEsquemasTokenTypes.txt
+LexerEsquemasTokenTypes.java
 
-Anasint.smap
-Anasint.java
-AnasintTokenTypes.txt
-AnasintTokenTypes.java
+#parserEsquemas.g
+ParserEsquemas.smap
+ParserEsquemas.java
+ParserEsquemasTokenTypes.txt
+ParserEsquemasTokenTypes.java
 
-Evaluador.smap
-Evaluador.java
-EvaluadorTokenTypes.txt
-EvaluadorTokenTypes.java
+#evaluadorEsquemas.g
+EvaluadorEsquemas.smap
+EvaluadorEsquemas.java
+EvaluadorEsquemasTokenTypes.txt
+EvaluadorEsquemasTokenTypes.java
 
 ##Eclipse files
 .antlr-eclipse

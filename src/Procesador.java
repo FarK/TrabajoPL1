@@ -6,14 +6,14 @@ import antlr.debug.misc.ASTFrame;
 public class Procesador {
 	public static void main(String args[]) {
 		try {
-			FileInputStream fis = new FileInputStream(args[0]);
+			FileInputStream fEsquemas = new FileInputStream(args[0]);
 			
-			Analex analex = new Analex(fis);
-			Anasint anasint = new Anasint(analex);
-			anasint.entrada();
-			AST arbol = anasint.getAST();
-			Evaluador evaluador = new Evaluador();
-			evaluador.entrada(arbol);
+			LexerEsquemas lexerEsquemas = new LexerEsquemas(fEsquemas);
+			ParserEsquemas parserEsquemas = new ParserEsquemas(lexerEsquemas);
+			parserEsquemas.entrada();
+			AST arbol = parserEsquemas.getAST();
+			EvaluadorEsquemas evaluadorEsquemas = new EvaluadorEsquemas();
+			evaluadorEsquemas.entrada(arbol);
 
 			ASTFrame display = new ASTFrame("Árbol", arbol);
 			display.setVisible(true);

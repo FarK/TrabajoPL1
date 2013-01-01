@@ -1,9 +1,9 @@
 /************/
 /* Evaluador /
 /************/
-class Evaluador extends TreeParser;
+class EvaluadorEsquemas extends TreeParser;
 options{
-	importVocab = Anasint;
+	importVocab = ParserEsquemas;
 }
 
 {
