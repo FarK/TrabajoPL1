@@ -14,7 +14,6 @@ tokens {
 	T_TIEMPO="tim";
 	
 	ESQUEMAS="ESQUEMAS";
-	DATOS="DATOS";
 }
 
 // Blancos
@@ -31,8 +30,6 @@ COMENTARIO: "#" (~'\n')* {$setType(Token.SKIP);};
 protected DIGITO : '0'..'9';
 NUMERO : (DIGITO)+('.'(DIGITO)+)?;
 
-protected FICHERO : (~('/'|'\n'))*;
-RUTA : ("/"FICHERO)+;
 
 // Identificadores
 //protected LETRA : 'A'..'Z'|'a'..'z'|á|é|í|ú|ñ|Á|É|Í|Ú|Ñ;

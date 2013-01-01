@@ -10,10 +10,9 @@ options{
 	enum Tipo{NULL, NUMERO, TEXTO, TIEMPO};
 }
 
-entrada: #(ENTRADA esquemas datos);
+entrada: #(ENTRADA esquemas);
 
 esquemas: #(ESQUEMAS (esquema)*);
-datos: #(DATOS (RUTA)*);
 
 esquema: #(i:IDENT (atributo)+)
     	{System.out.println(i.getText());}
