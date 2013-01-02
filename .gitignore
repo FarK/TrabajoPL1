@@ -17,6 +17,18 @@ EvaluadorEsquemas.java
 EvaluadorEsquemasTokenTypes.txt
 EvaluadorEsquemasTokenTypes.java
 
+#lerxerEsquemas.g
+LexerDatos.smap
+LexerDatos.java
+LexerDatosTokenTypes.txt
+LexerDatosTokenTypes.java
+
+#parserDatos.g
+ParserDatos.smap
+ParserDatos.java
+ParserDatosTokenTypes.txt
+ParserDatosTokenTypes.java
+
 ##Eclipse files
 .antlr-eclipse
 .classpath
