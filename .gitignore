@@ -29,6 +29,12 @@ ParserDatos.java
 ParserDatosTokenTypes.txt
 ParserDatosTokenTypes.java
 
+#compruebaDatos.g
+CompruebaDatos.smap
+CompruebaDatos.java
+CompruebaDatosTokenTypes.txt
+CompruebaDatosTokenTypes.java
+
 ##Eclipse files
 .antlr-eclipse
 .classpath

@@ -25,11 +25,11 @@ public class Procesador {
 
 			LexerDatos lexerDatos = new LexerDatos(fDatos);
 			ParserDatos parserDatos = new ParserDatos(lexerDatos);
-			//EvaluadorDatos evaluadorDatos = new EvaluadorDatos();
+			CompruebaDatos compruebaDatos = new CompruebaDatos();
 
 			parserDatos.datos();
 			AST arbolDatos = parserDatos.getAST();
-			//evaluadorDatos.datos(arbolDatos);
+			compruebaDatos.datos(arbolDatos);
 
 			ASTFrame displayDatos = new ASTFrame("Árbol Datos", arbolDatos);
 			displayDatos.setVisible(true);
