@@ -13,7 +13,9 @@ tokens{
 }
 
 esquemas: ESQUEMAS^ LLAVE_A! (esquema)* LLAVE_C!;
-esquema: IDENT^ LLAVE_A! aob:atributos_ob aop:atributos_op LLAVE_C!;
+esquema: IDENT^ LLAVE_A! extensiones aob:atributos_ob aop:atributos_op LLAVE_C!;
+
+extensiones: EXTENSIONES^ IDENT (COMA! IDENT)*;
 
 atributos_ob: (atributo_ob)+
               {#atributos_ob = #(#[ATRIBUTO_OB, "ATRIBUTOS OBLIGATORIO"], ##);}

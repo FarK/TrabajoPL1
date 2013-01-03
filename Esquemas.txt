@@ -1,12 +1,14 @@
 # Tipos de archivos a clasificar, con sus atributos
 ESQUEMAS{
 	VIDEOS{
+		extensiones avi, mpg, mkv
 		num Anyo
 		txt Genero
 		[num Puntuacion]
 	}
 	
 	MUSICA{
+		extensiones mp3, ogg, wma
 		txt Autor
 		txt Album
 		txt Genero
@@ -15,6 +17,7 @@ ESQUEMAS{
 	}
 
 	LIBROS{
+		extensiones pdf, ePub
 		txt Autor
 		num Anyo	#Año de publicación
 		txt Genero

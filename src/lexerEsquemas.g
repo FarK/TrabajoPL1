@@ -9,6 +9,7 @@ options{
 
 // Palabras reservadas
 tokens {
+	EXTENSIONES="extensiones";
 	T_NUMERO="num";
 	T_TEXTO="txt";
 	T_TIEMPO="tim";
@@ -30,9 +31,7 @@ COMENTARIO: "#" (~'\n')* {$setType(Token.SKIP);};
 protected DIGITO : '0'..'9';
 NUMERO : (DIGITO)+('.'(DIGITO)+)?;
 
-
 // Identificadores
-//protected LETRA : 'A'..'Z'|'a'..'z'|á|é|í|ú|ñ|Á|É|Í|Ú|Ñ;
 protected LETRA : 'A'..'Z'|'a'..'z';
 IDENT: LETRA(LETRA|DIGITO)*;
 
@@ -41,3 +40,6 @@ LLAVE_A: '{';
 LLAVE_C: '}';
 CORCHETE_A: '[';
 CORCHETE_C: ']';
+
+//Separadores
+COMA:',';

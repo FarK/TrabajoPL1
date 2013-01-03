@@ -12,7 +12,9 @@ options{
 
 esquemas: #(ESQUEMAS (esquema)*);
 
-esquema: #(IDENT atributos_ob atributos_op);
+esquema: #(IDENT extensiones atributos_ob atributos_op);
+
+extensiones: #(EXTENSIONES (IDENT)+);
 
 atributos_ob: #(ATRIBUTO_OB (atributo)+);
 
