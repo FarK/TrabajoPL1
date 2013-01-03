@@ -1,3 +1,8 @@
+header{
+	import java.util.List;
+	import java.util.ArrayList;
+}
+
 /************************/
 /* Analizador sintáctico /
 /************************/
@@ -6,12 +11,34 @@ options{
 	importVocab = ParserDatos;
 }
 
-datos: #(DATOS (fichero)*);
+{public List<Fichero> ficheros = new ArrayList<Fichero>();}
 
-fichero: #(FICHERO ruta atributos extension);
+datos {Fichero f;}: #(DATOS (
+          f=fichero {ficheros.add(f);}
+         )*)
+     ;
 
-ruta: #(RUTA (SECCION)+);
+fichero returns [Fichero fichero = new Fichero()] {String e; List<String> r,a;}:
+         #(FICHERO r=ruta a=atributos e=extension)
+         {
+            fichero.addRuta(r);
+            fichero.atributos = a;
+            fichero.extension = e;
+         }
+       ;
 
-atributos: #(ATRIBUTOS (SECCION)+);
+ruta returns [List<String> ruta = new ArrayList<String>()]:
+      #(RUTA (s:SECCION
+                {ruta.add(#s.getText());}
+             )+)
+    ;
 
-extension: #(EXTENSION SECCION);
+atributos returns [List<String> atributos = new ArrayList<String>()]:
+           #(ATRIBUTOS (s:SECCION
+                          {atributos.add(#s.getText());}
+                       )+)
+         ;
+
+extension returns [String extension = ""]:
+            #(EXTENSION s:SECCION) {extension = #s.getText();}
+         ;
