@@ -12,10 +12,10 @@ ParserEsquemasTokenTypes.txt
 ParserEsquemasTokenTypes.java
 
 #evaluadorEsquemas.g
-EvaluadorEsquemas.smap
-EvaluadorEsquemas.java
-EvaluadorEsquemasTokenTypes.txt
-EvaluadorEsquemasTokenTypes.java
+CompruebaEsquemas.smap
+CompruebaEsquemas.java
+CompruebaEsquemasTokenTypes.txt
+CompruebaEsquemasTokenTypes.java
 
 #lerxerEsquemas.g
 LexerDatos.smap

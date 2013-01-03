@@ -11,11 +11,11 @@ public class Procesador {
 
 			LexerEsquemas lexerEsquemas = new LexerEsquemas(fEsquemas);
 			ParserEsquemas parserEsquemas = new ParserEsquemas(lexerEsquemas);
-			EvaluadorEsquemas evaluadorEsquemas = new EvaluadorEsquemas();
+			CompruebaEsquemas compruebaEsquemas = new CompruebaEsquemas();
 
 			parserEsquemas.esquemas();
 			AST arbolEsquemas = parserEsquemas.getAST();
-			//evaluadorEsquemas.entrada(arbolEsquemas);
+			compruebaEsquemas.esquemas(arbolEsquemas);
 
 			ASTFrame displayEsquemas = new ASTFrame("Árbol Esquemas", arbolEsquemas);
 			displayEsquemas.setVisible(true);
