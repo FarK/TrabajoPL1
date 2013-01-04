@@ -1,4 +1,5 @@
 import java.io.*;
+
 import antlr.*;
 import antlr.collections.AST;
 import antlr.debug.misc.ASTFrame;
@@ -15,7 +16,6 @@ public class Procesador {
 
 			parserEsquemas.esquemas();
 			AST arbolEsquemas = parserEsquemas.getAST();
-			compruebaEsquemas.esquemas(arbolEsquemas);
 
 			ASTFrame displayEsquemas = new ASTFrame("Árbol Esquemas", arbolEsquemas);
 			displayEsquemas.setVisible(true);
@@ -30,6 +30,13 @@ public class Procesador {
 			parserDatos.datos();
 			AST arbolDatos = parserDatos.getAST();
 			compruebaDatos.datos(arbolDatos);
+
+			//COMPROBACIÓN DE ESQUEMAS
+			Boolean esqCorrectos = true;
+			for(Fichero fichero : compruebaDatos.ficheros){
+				esqCorrectos = compruebaEsquemas.esquemas(arbolEsquemas,fichero)
+					&&  esqCorrectos;
+			}
 
 			ASTFrame displayDatos = new ASTFrame("Árbol Datos", arbolDatos);
 			displayDatos.setVisible(true);
