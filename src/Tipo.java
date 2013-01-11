@@ -1,7 +1,7 @@
 public enum Tipo {
 	NUM, TXT, TIM;
 	
-	public String toString(Tipo tipo){
+	public static String toString(Tipo tipo){
 		String ret = "";
 
 		switch(tipo){

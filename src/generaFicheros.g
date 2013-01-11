@@ -18,11 +18,10 @@ datos {Fichero f;}: #(DATOS (
          )*)
      ;
 
-fichero returns [Fichero fichero = new Fichero()] {String e; List<String> r,a;}:
-         #(FICHERO r=ruta a=atributos e=extension)
+fichero returns [Fichero fichero = new Fichero()] {String e; List<String> r;}:
+         #(FICHERO r=ruta atributos[fichero] e=extension)
          {
             fichero.addRuta(r);
-            fichero.atributos = a;
             fichero.extension = e;
          }
        ;
@@ -33,9 +32,9 @@ ruta returns [List<String> ruta = new ArrayList<String>()]:
              )+)
     ;
 
-atributos returns [List<String> atributos = new ArrayList<String>()]:
+atributos [Fichero fichero]:
            #(ATRIBUTOS (s:SECCION
-                          {atributos.add(#s.getText());}
+                          {fichero.addAtributo(#s.getText());}
                        )+)
          ;
 
