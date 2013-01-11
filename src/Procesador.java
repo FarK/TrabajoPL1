@@ -17,9 +17,6 @@ public class Procesador {
 			parserEsquemas.esquemas();
 			AST arbolEsquemas = parserEsquemas.getAST();
 
-			ASTFrame displayEsquemas = new ASTFrame("Árbol Esquemas", arbolEsquemas);
-			displayEsquemas.setVisible(true);
-
 			//ANÁLISIS DE DATOS
 			FileInputStream fDatos = new FileInputStream(args[1]);
 
@@ -37,9 +34,30 @@ public class Procesador {
 				esqCorrectos = compruebaEsquemas.esquemas(arbolEsquemas,fichero)
 					&&  esqCorrectos;
 			}
+			
+			if(esqCorrectos)
+				System.out.println("Todo correcto");
+			else
+				System.out.println("Error");
+
+			//ANÁLISIS DE CONSULTAS
+			FileInputStream fConsultas = new FileInputStream(args[2]);
+
+			LexerConsultas lexerConsultas = new LexerConsultas(fConsultas);
+			ParserConsultas parserConsultas = new ParserConsultas(lexerConsultas);
+
+			parserConsultas.consultas();
+			AST arbolConsultas = parserConsultas.getAST();
+
+			//MOSTRAR ÁRBOLES
+			ASTFrame displayEsquemas = new ASTFrame("Árbol Esquemas", arbolEsquemas);
+			displayEsquemas.setVisible(true);
 
 			ASTFrame displayDatos = new ASTFrame("Árbol Datos", arbolDatos);
 			displayDatos.setVisible(true);
+
+			ASTFrame displayConsultas = new ASTFrame("Árbol Consultas", arbolConsultas);
+			displayConsultas.setVisible(true);
 
 		}catch(ANTLRException ae) {
 			System.err.println(ae.getMessage());

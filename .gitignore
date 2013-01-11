@@ -35,6 +35,18 @@ CompruebaDatos.java
 CompruebaDatosTokenTypes.txt
 CompruebaDatosTokenTypes.java
 
+#lerxerConsultas.g
+LexerConsultas.smap
+LexerConsultas.java
+LexerConsultasTokenTypes.txt
+LexerConsultasTokenTypes.java
+
+#parserConsultas.g
+ParserConsultas.smap
+ParserConsultas.java
+ParserConsultasTokenTypes.txt
+ParserConsultasTokenTypes.java
+
 ##Eclipse files
 .antlr-eclipse
 .classpath
