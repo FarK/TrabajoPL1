@@ -3,7 +3,7 @@
 /********************/
 class LexerConsultas extends Lexer;
 options{
-	k=2;
+	k=3;
 	charVocabulary = '\3'..'\377';
 }
 
