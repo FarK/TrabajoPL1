@@ -11,11 +11,11 @@ ParserEsquemas.java
 ParserEsquemasTokenTypes.txt
 ParserEsquemasTokenTypes.java
 
-#evaluadorEsquemas.g
-CompruebaEsquemas.smap
-CompruebaEsquemas.java
-CompruebaEsquemasTokenTypes.txt
-CompruebaEsquemasTokenTypes.java
+#compruebaFicheros.g
+CompruebaFicheros.smap
+CompruebaFicheros.java
+CompruebaFicherosTokenTypes.txt
+CompruebaFicherosTokenTypes.java
 
 #lerxerEsquemas.g
 LexerDatos.smap
@@ -29,11 +29,11 @@ ParserDatos.java
 ParserDatosTokenTypes.txt
 ParserDatosTokenTypes.java
 
-#compruebaDatos.g
-CompruebaDatos.smap
-CompruebaDatos.java
-CompruebaDatosTokenTypes.txt
-CompruebaDatosTokenTypes.java
+#generaFicheros.g
+GeneraFicheros.smap
+GeneraFicheros.java
+GeneraFicherosTokenTypes.txt
+GeneraFicherosTokenTypes.java
 
 #lerxerConsultas.g
 LexerConsultas.smap

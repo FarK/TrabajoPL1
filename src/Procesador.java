@@ -12,7 +12,6 @@ public class Procesador {
 
 			LexerEsquemas lexerEsquemas = new LexerEsquemas(fEsquemas);
 			ParserEsquemas parserEsquemas = new ParserEsquemas(lexerEsquemas);
-			CompruebaEsquemas compruebaEsquemas = new CompruebaEsquemas();
 
 			parserEsquemas.esquemas();
 			AST arbolEsquemas = parserEsquemas.getAST();
@@ -22,16 +21,19 @@ public class Procesador {
 
 			LexerDatos lexerDatos = new LexerDatos(fDatos);
 			ParserDatos parserDatos = new ParserDatos(lexerDatos);
-			CompruebaDatos compruebaDatos = new CompruebaDatos();
 
 			parserDatos.datos();
 			AST arbolDatos = parserDatos.getAST();
-			compruebaDatos.datos(arbolDatos);
 
 			//COMPROBACIÓN DE ESQUEMAS
+			GeneraFicheros generaFicheros = new GeneraFicheros();
+			CompruebaFicheros compruebaFicheros = new CompruebaFicheros();
+
+			generaFicheros.datos(arbolDatos);
+
 			Boolean esqCorrectos = true;
-			for(Fichero fichero : compruebaDatos.ficheros){
-				esqCorrectos = compruebaEsquemas.esquemas(arbolEsquemas,fichero)
+			for(Fichero fichero : generaFicheros.ficheros){
+				esqCorrectos = compruebaFicheros.esquemas(arbolEsquemas,fichero)
 					&&  esqCorrectos;
 			}
 			

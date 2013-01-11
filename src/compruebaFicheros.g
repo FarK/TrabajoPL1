@@ -6,7 +6,7 @@ header{
 /************/
 /* Evaluador /
 /************/
-class CompruebaEsquemas extends TreeParser;
+class CompruebaFicheros extends TreeParser;
 options{
 	importVocab = ParserEsquemas;
 }

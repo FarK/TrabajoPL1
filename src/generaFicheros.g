@@ -6,7 +6,7 @@ header{
 /************************/
 /* Analizador sintáctico /
 /************************/
-class CompruebaDatos extends TreeParser;
+class GeneraFicheros extends TreeParser;
 options{
 	importVocab = ParserDatos;
 }
