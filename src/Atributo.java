@@ -24,6 +24,12 @@ public class Atributo {
 		setValorYTipo(atributo);
 	}
 
+	public void setAtributo(String atributo){
+		this.valorCadena = atributo;
+
+		setValorYTipo(atributo);
+	}
+
 	private void setValorYTipo(String atributo){
 		try{
 			valorNumero = Double.parseDouble(atributo);
