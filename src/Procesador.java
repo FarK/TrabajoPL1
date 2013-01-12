@@ -25,22 +25,22 @@ public class Procesador {
 			parserDatos.datos();
 			AST arbolDatos = parserDatos.getAST();
 
-			//COMPROBACIÓN DE ESQUEMAS
+			//COMPROBACIÓN DE FICHEROS
 			GeneraFicheros generaFicheros = new GeneraFicheros();
 			CompruebaFicheros compruebaFicheros = new CompruebaFicheros();
 
 			generaFicheros.datos(arbolDatos);
 
-			Boolean esqCorrectos = true;
+			Boolean fichCorrectos = true;
 			for(Fichero fichero : generaFicheros.ficheros){
-				esqCorrectos = compruebaFicheros.esquemas(arbolEsquemas,fichero)
-					&&  esqCorrectos;
+				fichCorrectos = compruebaFicheros.esquemas(arbolEsquemas,fichero)
+					&& fichCorrectos;
 			}
 			
-			if(esqCorrectos)
-				System.out.println("Todo correcto");
+			if(fichCorrectos)
+				System.out.println("Todo los ficheros siguen los esquemas.");
 			else
-				System.out.println("Error");
+				System.out.println("Error semántico: algún fichero no sigue los esquemas.");
 
 			//ANÁLISIS DE CONSULTAS
 			FileInputStream fConsultas = new FileInputStream(args[2]);
@@ -50,6 +50,23 @@ public class Procesador {
 
 			parserConsultas.consultas();
 			AST arbolConsultas = parserConsultas.getAST();
+
+			//COMPROBACIÓN DE CONSULTAS
+			GeneraConsultas generaConsultas = new GeneraConsultas();
+			CompruebaCamposConsultas compruebaCamposConsultas = new CompruebaCamposConsultas();
+
+			generaConsultas.consultas(arbolConsultas);
+
+			Boolean consCorrectas = true;
+			for(Consulta consulta : generaConsultas.consultas){
+				consCorrectas = compruebaCamposConsultas.esquemas(arbolEsquemas, consulta)
+					&&  consCorrectas;
+			}
+
+			if(consCorrectas)
+				System.out.println("Todas las consultas son sobre campos existentes en los esquemas.");
+			else
+				System.out.println("Error semántico: alguna consulta es sobre un campo que no existe en los esquemas.");
 
 			//MOSTRAR ÁRBOLES
 			ASTFrame displayEsquemas = new ASTFrame("Árbol Esquemas", arbolEsquemas);

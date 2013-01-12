@@ -47,6 +47,18 @@ ParserConsultas.java
 ParserConsultasTokenTypes.txt
 ParserConsultasTokenTypes.java
 
+#generaConsultas.g
+GeneraConsultas.smap
+GeneraConsultas.java
+GeneraConsultasTokenTypes.txt
+GeneraConsultasTokenTypes.java
+
+#compruebaCamposConsultas.g
+CompruebaCamposConsultas.smap
+CompruebaCamposConsultas.java
+CompruebaCamposConsultasTokenTypes.txt
+CompruebaCamposConsultasTokenTypes.java
+
 ##Eclipse files
 .antlr-eclipse
 .classpath
