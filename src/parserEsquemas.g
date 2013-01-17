@@ -1,6 +1,3 @@
-/************************/
-/* Analizador sintáctico /
-/************************/
 class ParserEsquemas extends Parser;
 options{
 	importVocab = LexerEsquemas;

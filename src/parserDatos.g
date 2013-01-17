@@ -1,6 +1,3 @@
-/************************/
-/* Analizador sintáctico /
-/************************/
 class ParserDatos extends Parser;
 options{
 	k=2;

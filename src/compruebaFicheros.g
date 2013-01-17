@@ -3,9 +3,6 @@ header{
 	import java.util.ArrayList;
 	import java.util.ListIterator;
 }
-/************/
-/* Evaluador /
-/************/
 class CompruebaFicheros extends TreeParser;
 options{
 	importVocab = ParserEsquemas;

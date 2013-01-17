@@ -3,9 +3,6 @@ header{
 	import java.util.ArrayList;
 }
 
-/************************/
-/* Analizador sintáctico /
-/************************/
 class GeneraFicheros extends TreeParser;
 options{
 	importVocab = ParserDatos;
