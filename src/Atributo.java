@@ -5,10 +5,13 @@ import java.util.Date;
 
 public class Atributo {
 	public Tipo tipo;
+	public String nombre;
 
 	public String valorCadena;
 	public Double valorNumero;
 	public Date valorTiempo;
+	
+	private DateFormat dateFormat;
 
 	public Atributo(){
 		tipo = null;
@@ -16,9 +19,12 @@ public class Atributo {
 		valorCadena = null;
 		valorNumero = null;
 		valorTiempo = null;
+		
+		dateFormat = new SimpleDateFormat("mm:ss");
 	}
 
 	public Atributo(String atributo){
+		this();
 		this.valorCadena = atributo;
 
 		setValorYTipo(atributo);
@@ -36,9 +42,8 @@ public class Atributo {
 			tipo = Tipo.NUM;
 		}
 		catch(NumberFormatException exc){
-			DateFormat df = new SimpleDateFormat("mm:ss");
 			try{
-				valorTiempo = df.parse(atributo);
+				valorTiempo = dateFormat.parse(atributo);
 				tipo = Tipo.TIM;
 			}catch (ParseException e){
 				tipo = Tipo.TXT;
@@ -47,10 +52,22 @@ public class Atributo {
 	}
 
 	public String toString(){
-		return	"Tipo = " + Tipo.toString(tipo) + "\n" +
-			"Valor como cadena = " + valorCadena + "\n" +
-			"Valor como numero = " + valorNumero + "\n" +
-			"Valor como Tiempo = " + valorTiempo + "\n"
-			;
+		String result = "";
+		
+		switch(tipo){
+			case NUM:
+				result = valorNumero.toString();
+			break;
+
+			case TXT:
+				result = valorCadena;
+			break;
+
+			case TIM:
+				result = dateFormat.format(valorTiempo);
+			break;
+		}
+
+		return result;
 	}
 }

@@ -11,6 +11,8 @@ options{
 	importVocab = ParserEsquemas;
 }
 
+{NombraAtributos nombraAtributos = new NombraAtributos();}
+
 esquemas[Fichero fichero] returns [Boolean esqCorrecto = false] {Boolean b = false;}:
           #(ESQUEMAS (b=esquema[fichero]
                         {esqCorrecto = esqCorrecto || b;}
@@ -19,7 +21,12 @@ esquemas[Fichero fichero] returns [Boolean esqCorrecto = false] {Boolean b = fal
 
 esquema[Fichero fichero] returns [Boolean esqCorrecto = false] {Boolean ext; List<Tipo> aob,aop;}:
          #(esq:IDENT ext=extensiones[fichero.extension] aob=atributos_ob aop=atributos_op)
-         {esqCorrecto = ext && Utiles.compruebaAtributos(aob, aop, fichero.atributos);}
+         {
+          esqCorrecto = ext && Utiles.compruebaAtributos(aob, aop, fichero.atributos);
+          
+          if(esqCorrecto)
+            nombraAtributos.esquema(esquema_AST_in, fichero, aob.size(), aop.size());
+         }
        ;
 
 extensiones[String extension] returns [Boolean extB = false]:
