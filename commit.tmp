@@ -1,0 +1,43 @@
+Implementado ejecución de consultas:
+
+* Se ha añadido un atributo "nombre" a la clase "Atributo"
+* Se han implementado métodos para el filtrado de fichero y el
+  ejecución de consultas en la clase "Consulta"
+* Se ha implementado el treeparser "FiltraFichero" el filtrado de ficheros
+  dada una consulta.
+* Se ha modificado el treeparser "compruebaFicheros" para llamar a
+  "NombraAtributos"
+* Se ha implementado el treeparser "NombraAtributos", que pone el nombre
+  a los atributos (ya comprobados) de los fichero.
+* Se ha modificado el método "compruebaConsulta" de la clase "Utiles"
+  para tener el cuenta el campo "ruta"
+* Se ha modificado el treeparser "CompruegaCamposConsultas" para
+  ++++++++++++++++++++++++++++++++
+* Se han modificado las entradas para una correcta ejecución.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   ../Consultas.txt
+#	modified:   ../Datos.txt
+#	modified:   Atributo.java
+#	modified:   Consulta.java
+#	new file:   FiltraFichero.java
+#	new file:   FiltraFichero.smap
+#	new file:   FiltraFicheroTokenTypes.java
+#	new file:   FiltraFicheroTokenTypes.txt
+#	new file:   NombraAtributos.java
+#	new file:   NombraAtributos.smap
+#	new file:   NombraAtributosTokenTypes.java
+#	new file:   NombraAtributosTokenTypes.txt
+#	modified:   Procesador.java
+#	modified:   Utiles.java
+#	modified:   compruebaCamposConsultas.g
+#	modified:   compruebaFicheros.g
+#	new file:   filtraFichero.g
+#	modified:   generaConsultas.g
+#	new file:   nombraAtributos.g
+#

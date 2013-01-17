@@ -59,6 +59,18 @@ CompruebaCamposConsultas.java
 CompruebaCamposConsultasTokenTypes.txt
 CompruebaCamposConsultasTokenTypes.java
 
+#filtraFichero.g
+FiltraFichero.smap
+FiltraFichero.java
+FiltraFicheroTokenTypes.txt
+FiltraFicheroTokenTypes.java
+
+#nombraAtributos.g
+NombraAtributos.smap
+NombraAtributos.java
+NombraAtributosTokenTypes.txt
+NombraAtributosTokenTypes.java
+
 ##Eclipse files
 .antlr-eclipse
 .classpath

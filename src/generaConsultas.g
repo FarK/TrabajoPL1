@@ -58,7 +58,7 @@ expresion[Consulta consulta] {Atributo v;}:
          ;
 
 valor returns [Atributo valor = new Atributo();]:
-       c:CADENA {valor.setAtributo(#c.getText());}
+       c:CADENA {valor.setAtributo(#c.getText().replaceAll("\"", ""));}
      | n:NUMERO {valor.setAtributo(#n.getText());}
      | t:TIEMPO {valor.setAtributo(#t.getText());}
      ;

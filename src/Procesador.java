@@ -4,6 +4,9 @@ import antlr.*;
 import antlr.collections.AST;
 import antlr.debug.misc.ASTFrame;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Procesador {
 	public static void main(String args[]) {
 		try {
@@ -67,6 +70,23 @@ public class Procesador {
 				System.out.println("Todas las consultas son sobre campos existentes en los esquemas.");
 			else
 				System.out.println("Error semántico: alguna consulta es sobre un campo que no existe en los esquemas.");
+
+			//EJECUTA CONSULTAS
+			FiltraFichero filtraFichero = new FiltraFichero();
+
+			int numConsulta = 1;
+			for(Consulta consulta : generaConsultas.consultas){
+				List<Fichero> ficherosFiltrados = new ArrayList<Fichero>();
+
+				for(Fichero fichero : generaFicheros.ficheros){
+					if(filtraFichero.esquemas(arbolEsquemas, consulta, fichero))
+						ficherosFiltrados.add(fichero);
+				}
+
+				//System.out.println(ficherosFiltrados);
+				for(Fichero fichero : ficherosFiltrados)
+					System.out.println("C" + numConsulta++ + ": " + consulta.ejecuta(fichero));
+			}
 
 			//MOSTRAR ÁRBOLES
 			ASTFrame displayEsquemas = new ASTFrame("Árbol Esquemas", arbolEsquemas);

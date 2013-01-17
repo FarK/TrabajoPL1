@@ -28,8 +28,8 @@ public class Utiles {
 
 		//Comprobamos que los atributos estan en alguna de las dos listas
 		for(String atributo : atributosConsulta){
-			//Evitamos el campo "nombre", porque siempre se puede consultar
-			if(!atributo.equals("nombre")){
+			//Evitamos el campo "nombre" y el campo "ruta", porque siempre se pueden consultar
+			if(!atributo.equals("nombre") && !atributo.equals("ruta")){
 				Boolean atributoEnAob = false;
 				Boolean atributoEnAop = false;
 
