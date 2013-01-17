@@ -16,7 +16,7 @@ esquemas[Consulta consulta] returns [Boolean consCorrecta = false] {Boolean b = 
         ;
 
 esquema[Consulta consulta] returns [Boolean consCorrecta = false] {List<String> aob, aop;}:
-         #(e:IDENT extensiones aob=atributos_ob aop=atributos_op)
+         #(e:IDENT . aob=atributos_ob aop=atributos_op)
            {
             if(e.getText().equals(consulta.clase)){
             	consCorrecta =	Utiles.compruebaCamposConsulta(aob, aop, consulta.atributosConsulta) &&
@@ -25,8 +25,6 @@ esquema[Consulta consulta] returns [Boolean consCorrecta = false] {List<String> 
             }
            }
        ;
-
-extensiones: #(EXTENSIONES (IDENT)+);
 
 atributos_ob returns [List<String> aob = new ArrayList<String>()] {String at;}:
               #(ATRIBUTO_OB (at=atributo {aob.add(at);} )+)
